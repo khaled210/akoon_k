@@ -1,0 +1,9 @@
+.home-section {
+  padding: var(--space-xl) var(--space-none);
+  &--xl {
+    padding: var(--space-xxxl) var(--space-none);
+  }
+  @include breakpoint(isCommon) {
+    padding: var(--space-xl) var(--space-none);
+  }
+}

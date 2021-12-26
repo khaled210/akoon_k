@@ -1,0 +1,25 @@
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  a {
+    margin: 0 20px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+  &--sm {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    a {
+      margin: 0 10px;
+    } 
+  }
+}

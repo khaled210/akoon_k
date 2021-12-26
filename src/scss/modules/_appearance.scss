@@ -1,0 +1,24 @@
+:root {
+  --appearance-bg: var(--color-neutral-1);
+  --appearance-color: #1f222a;
+  --appearance-word-color: var(--color-neutral-1);
+  --appearance-bg-content: #fff;
+  --appearance-bg-preview-controler: #fff;
+}
+.appearance--dark-mode {
+  --appearance-bg: #1f222a;
+  --appearance-color: var(--color-neutral-1);
+  // --appearance-border: var(--color-primary-light);
+  --appearance-word-color: #1f222a;
+  --appearance-bg-content: #1f222a;
+  --appearance-bg-preview-controler: black;
+}
+.appearance {
+  min-height: 100vh;
+  // background-color: var(--appearance-bg);
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(isCommon) {
+    padding-top: 60px;
+  }
+}

@@ -1,0 +1,34 @@
+.rating-stars {
+  form {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  label.star {
+    float: none !important;
+    &::before {
+      text-shadow: none !important;
+    }
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  &--end {
+    form {
+      justify-content: flex-end;
+    }
+  }
+  &--center {
+    form {
+      justify-content: center;
+    }
+  }
+
+  &--sm {
+    label.star {
+      padding: 3px !important;
+      font-size: 20px !important;
+    }
+  }
+}

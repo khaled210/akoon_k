@@ -1,0 +1,50 @@
+.confirmation-message {
+  --success-color: #37b24d;
+  --error-color: #c92a2a;
+  --warning-color: #e9a100;
+  --icon-size: 100px;
+  --message-color: "";
+  width: 33vw;
+  max-width: 100%;
+  .mat-dialog-container {
+    width: 33vw;
+    max-width: 100%;
+  }
+  &--success {
+    --message-color: var(--success-color);
+  }
+  &--warn {
+    --message-color: var(--warning-color);
+  }
+  &--error {
+    --message-color: var(--error-color);
+  }
+  &--s {
+    --icon-size: 70px;
+  }
+  .confirmation-message__icon {
+    color: var(--message-color);
+  }
+  .confirmation-message__body {
+    overflow: unset;
+  }
+}
+.confirmation-message__body {
+  &--text-center {
+    text-align: center;
+  }
+}
+.confirmation-message__icon {
+  margin-bottom: var(--space-base);
+  svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: var(--message-color);
+  }
+  .mat-icon {
+    font-size: var(--icon-size);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,26 @@
+.grid-view {
+  width: 100%;
+  border-spacing: 0 var(--space-base);
+  border-collapse: separate;
+  tr {
+    border-radius: var(--border-radius-soft);
+    box-shadow: var(--shadow-s);
+    vertical-align: top;
+  }
+  td {
+    border-radius: var(--border-radius-soft);
+    background-color: #fff;
+    padding: var(--space-base);
+  }
+  &--warning {
+    tr {
+      box-shadow: var(--shadow-s), 0 0 1px 1px var(--color-error);
+    }
+  }
+  .form-data__label {
+    font-size: 12px;
+  }
+  .form-data__value {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,9 @@
+﻿.settings-dropdown.mat-menu-panel {
+  min-width: 70px;
+  background-color: var(--light-background);
+  .mat-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

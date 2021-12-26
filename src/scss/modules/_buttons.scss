@@ -1,0 +1,91 @@
+.button {
+  @include breakpoint(large) {
+    --btn-height: 45px;
+  }
+  --btn-height: 35px;
+  background: transparent;
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  // display: inline-flex;
+  // align-items: center;
+  // justify-content: center;
+  height: var(--btn-height);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  border: 1px solid transparent;
+  outline: none;
+  padding: var(--space-none) var(--space-base);
+  transition: background ease 0.3s;
+  cursor: pointer;
+  &:after {
+    content: "";
+    display: inline-block;
+    height: var(--btn-height);
+    vertical-align: middle;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+  &--shadow {
+    box-shadow: 0 0 15px 2px #ccc;
+  }
+  // colors
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-secondary);
+    }
+  }
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+  &--basic-primary {
+    color: var(--color-primary);
+  }
+  &--basic-secondary {
+    color: var(--color-secondary);
+  }
+  &--white {
+    background-color: var(--color-white);
+  }
+  // border type
+  &--soft {
+    border-radius: var(--border-radius-soft);
+  }
+  &--rounded {
+    border-radius: var(--border-radius-rounded);
+  }
+  &--outlined {
+    border-color: var(--color-white);
+  }
+  //size
+  &--sm {
+    --btn-height: 25px;
+    @include breakpoint(large) {
+      --btn-height: 30px;
+    }
+  }
+  &--lg {
+    padding: var(--space-base) var(--space-m);
+  }
+  &--md {
+    padding: var(--space-s) var(--space-l);
+  }
+  // button with icon
+  &--icon {
+    span {
+      display: inline-block;
+      height: 28px;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+// Custom Theming for Angular Material
+@use '~@angular/material' as mat;
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$color-primary: (
+  500: var(--color-primary),
+  contrast: (
+    500: white,
+  ),
+);
+$color-accent: (
+  500: var(--color-secondary),
+  contrast: (
+    500: white,
+  ),
+);
+$color-warn: (
+  500: var(--color-error),
+  contrast: (
+    500: white,
+  ),
+);
+
+$poetry-primary: mat.define-palette($color-primary);
+$poetry-accent: mat.define-palette($color-accent);
+$poetry-warn: mat.define-palette($color-warn);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$poetry-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $poetry-primary,
+      accent: $poetry-accent,
+      warn: $poetry-warn,
+    ),
+  )
+);
+
+$custom-typography: mat.define-typography-config(
+  $font-family: var(--font-family),
+  $display-4: mat.define-typography-level(var(--font-size-h1), var(--font-size-h1), var(--font-light)),
+  $display-3: mat.define-typography-level(var(--font-size-h2), var(--font-size-h2), var(--font-regular)),
+  $display-2: mat.define-typography-level(var(--font-size-h3), var(--font-size-h3), var(--font-regular)),
+  $display-1: mat.define-typography-level(var(--font-size-h4), var(--font-size-h4), var(--font-regular)),
+  $headline: mat.define-typography-level(var(--font-size-h5), var(--font-size-h5), var(--font-regular)),
+  $title: mat.define-typography-level(var(--font-size-h6), var(--font-size-h6), var(--font-regular)),
+  $subheading-2: mat.define-typography-level(var(--font-size-base), 28px, var(--font-regular)),
+  $subheading-1: mat.define-typography-level(var(--font-size-s), 24px, var(--font-regular)),
+  $body-2: mat.define-typography-level(var(--font-size-s), 24px, var(--font-regular)),
+  $body-1: mat.define-typography-level(var(--font-size-s), 20px, var(--font-regular)),
+  $caption: mat.define-typography-level(var(--font-size-s), 20px, var(--font-regular)),
+  $button: mat.define-typography-level(var(--font-size-base), var(--font-size-base), var(--font-regular)),
+  $input: mat.define-typography-level(var(--font-size-s), 1.125, var(--font-regular)),
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($poetry-theme);
+@include mat.core($custom-typography);
+
+// .mat-button,
+// .mat-icon-button,
+// .mat-stroked-button,
+// .mat-flat-button {
+//   height: var(--button-height);
+// }
+.snackbar--primary {
+  .mat-button {
+    color: var(--color-primary-light);
+  }
+}
+body {
+  .cdk-overlay-container {
+    z-index: 10000;
+  }
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.mat-icon-button {
+  font-size: 24px;
+}

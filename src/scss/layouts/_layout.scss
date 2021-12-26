@@ -1,0 +1,85 @@
+.main-layout {
+  margin-top: 64px;
+}
+
+.router-container-bg {
+  // background: url(/assets/image/artwork.png) no-repeat;
+  background-position: -125px -125px;
+}
+
+.router-container {
+  position: relative;
+  padding-top: 15px;
+  margin-top: 64px;
+  overflow: hidden;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  @include rtl-prop(margin-left, margin-right, 70px, 0);
+
+  @include breakpoint(mid) {
+    @include rtl-prop(margin-left, margin-right, 230px, 30px);
+  }
+}
+
+.admin-container {
+  margin-top: 64px;
+  min-height: calc(100vh - 64px);
+  padding-top: 40px;
+  position: relative;
+}
+
+.l-height-65vh {
+  min-height: 65vh;
+}
+
+.l-full-height {
+  height: 100%;
+}
+
+.iframe-dialog {
+  margin-bottom: -6px;
+}
+
+.main-section {
+  padding: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 35px;
+
+  &--bg {
+    background-color: #f7f7f7;
+  }
+
+  &--col {
+    display: flex;
+    flex-direction: column;
+    min-height: 72vh;
+  }
+
+  @include breakpoint(mid) {
+    padding: 0 35px;
+  }
+}
+
+.sign-form {
+  min-height: calc(100vh - 64px);
+  padding-top: 55px;
+
+  &--bg {
+    @include breakpoint(large) {
+      background: url(/assets/image/login.svg) no-repeat left;
+      background-size: 52% 100%;
+      background-color: $color-white;
+    }
+  }
+}
+
+.line-break {
+  border: none;
+  background-color: #cfcfcf;
+  height: 0.5px;
+
+  &--sm {
+    width: 75px;
+  }
+}

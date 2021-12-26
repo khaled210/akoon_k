@@ -1,0 +1,61 @@
+.anonymous-user{
+    background-color: #fff;
+    min-height: 100vh;
+    .main-navbar{
+        position: static;
+        padding: 32px 0;
+        box-shadow: none;
+    }
+    .main-navbar__logo{
+        height: 53px;
+    }
+    .main-title{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 36px;
+        font-weight: 600;
+        color: $color-primary;
+        &:after {
+            content: url(/assets/image/divider-5318234_1280-1.svg);
+            display: block;
+            margin-top: 8px;
+        }
+    }
+}
+.content-tabs-header{
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+}
+
+.content-tabs-header__item {
+    color: #6d6d6d;
+    padding: .5em 1em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: all .3s ease-in;
+    &:after{
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        height: 3px;
+        left: 5px;
+        right: 5px;
+    }
+    &--active{
+        color: $color-gold;
+        &:after{
+            background-color: $color-gold;
+        }
+    }
+    &:hover{
+        text-decoration: none;
+        color: $color-gold;
+    }
+    > span{
+        margin-inline-start: 0.5em;
+        padding-bottom: 0.4em;
+    }
+}

@@ -1,0 +1,149 @@
+// .audio-player {
+//   position: relative;
+//   display: flex;
+//   width: 100%;
+//   height: 7px;
+//   border-radius: 30px;
+//   &--lemo {
+//     background-color: $color-lemo-light;
+//     .audio-player__controler {
+//       background-color: $color-lemo;
+//     }
+//   }
+//   &--blue {
+//     background-color: $color-blue-light;
+//     .audio-player__controler {
+//       background-color: $color-blue;
+//     }
+//   }
+// }
+
+// .audio-player__controler {
+//   display: flex;
+//   width: 19px;
+//   height: 19px;
+//   border-radius: 50%;
+//   margin-top: -7px;
+//   position: absolute;
+//   left: 0;
+//   @include rtl-prop(left, right, unset, 0);
+//   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+// }
+
+.audio-player .ngx-basic-audio-player {
+  position: relative;
+  flex-direction: row-reverse !important;
+  background: none !important;
+  box-shadow: none !important;
+  margin-bottom: 15px !important;
+  min-width: auto !important;
+}
+
+.audio-player .ngx-basic-audio-player .my-auto.ng-star-inserted {
+  position: absolute;
+  bottom: -8px !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  color: $color-grey;
+}
+
+.audio-player .ngx-basic-audio-player .ngx-basic-audio-player-button {
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-player .ngx-basic-audio-player .mat-icon {
+  height: 22px !important;
+  width: 22px !important;
+  color: $color-white;
+  border-radius: 50%;
+  font-size: 11px !important;
+  background-color: $color-green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.audio-player .ngx-basic-audio-player .mat-slider-thumb {
+  bottom: -13px;
+  width: 22px;
+  height: 22px;
+}
+
+.audio-player .ngx-basic-audio-player .mat-slider-thumb {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.audio-player .ngx-basic-audio-player .ngx-basic-audio-player-slider {
+  overflow: hidden;
+  padding-right: 0.25rem !important;
+}
+
+.audio-player--lemo .ngx-basic-audio-player {
+  .mat-slider-thumb {
+    background-color: $color-lemo;
+    border-color: $color-lemo;
+  }
+  .mat-slider-horizontal .mat-slider-track-wrapper {
+    background-color: transparent;
+    // opacity: 0.6;
+  }
+}
+
+.audio-player--blue .ngx-basic-audio-player .mat-slider-thumb {
+  background-color: $color-blue;
+  border-color: $color-blue;
+  .mat-slider-horizontal .mat-slider-track-wrapper {
+    background-color: transparent;
+    // opacity: 0.6;
+  }
+}
+
+.audio-player--lemo
+  .ngx-basic-audio-player
+  .mat-slider-horizontal
+  .mat-slider-track-background {
+  background-color: $color-lemo-light !important;
+}
+
+.audio-player--blue .ngx-basic-audio-player .mat-slider-track-background {
+  background-color: $color-blue-light !important;
+}
+
+.audio-player
+  .ngx-basic-audio-player
+  .mat-slider-horizontal
+  .mat-slider-track-fill {
+  height: 7px !important;
+}
+.audio-player
+  .ngx-basic-audio-player
+  .mat-slider-horizontal
+  .mat-slider-track-background {
+  height: 7px !important;
+}
+
+.audio-player
+  .ngx-basic-audio-player
+  .mat-slider-horizontal
+  .mat-slider-ticks-container {
+  height: 7px !important;
+}
+
+.audio-player .ngx-basic-audio-player .mat-slider-horizontal .mat-slider-ticks {
+  height: 7px !important;
+}
+
+.audio-player
+  .ngx-basic-audio-player
+  .mat-slider-horizontal
+  .mat-slider-track-wrapper {
+  height: 7px !important;
+  border-radius: 40px !important;
+}

@@ -1,0 +1,35 @@
+.brand {
+  width: var(--brand-width);
+  height: var(--brand-height);
+  fill: var(--color-primary);
+  display: flex;
+}
+.logo {
+  width: var(--brand-size);
+  height: var(--brand-size);
+  fill: var(--brand-color);
+  &--primary {
+    fill: var(--color-primary-light);
+    path {
+      fill: var(--color-primary-light);
+    }
+  }
+  &--secondary {
+    fill: var(--color-secondary);
+    path {
+      fill: var(--color-secondary);
+    }
+  }
+  &--md {
+    width: var(--brand-size-md);
+    height: var(--brand-size-md);
+  }
+  &--lg {
+    width: var(--brand-size-lg);
+    height: var(--brand-size-lg);
+  }
+  &--xl {
+    width: 12rem;
+    height: 12rem;
+  }
+}

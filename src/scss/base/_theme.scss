@@ -1,0 +1,61 @@
+:root {
+  --font-family: "Tajawal";
+  --font-poem: "Noto Naskh Arabic";
+
+  // Header
+  --header-bg: #fff;
+  --footer-bg: #fff;
+
+  // Color - Navbar
+  --color-navbar: var(--color-black-1);
+  --color-navbar--hover: var(--color-primary);
+
+  --header-height: auto;
+  --side-nav-width: 200px;
+  --side-nav-transition: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --side-nav-duration: 200ms;
+}
+
+$colors: (
+  "primary": "#966837",
+  "main-gold": "#966837",
+  "primary-light": "#C19968",
+  "light-gold": "#C19968",
+  "lighter-gold": "#FAF8EE",
+  "secondary": "#444",
+  "accent": "#444",
+  "light-grey": "#F2F0EB",
+  "light-grey-2": "#fcfcfb",
+  "dark-gray": "#2E2D2B",
+  "black": "#000",
+  "dark-500": "#000",
+  "dark-400": "#363636",
+  "dark-300": "#696969",
+  "dark-200": "#A3A3A3",
+  "dark-100": "#C7C8D9",
+  "light-500": "#E3E4EB",
+  "light-400": "#EBEBF0",
+  "light-300": "#F2F2F5",
+  "light-200": "#FAFAFC",
+  "light-100": "#fff",
+  "danger": "#F80B0B",
+  "danger-tint-1": "#ED605E",
+  "danger-tint-2": "#FFC7CB",
+  "danger-tint-3": "#FFE8EB",
+  "danger-shade-1": "#D8000B",
+  "danger-shade-2": "#BE0000",
+  "warn": "#F8820B",
+  "warn-tint-1": "#F8EC4A",
+  "warn-tint-2": "#FCF273",
+  "warn-tint-3": "#FEFAC4",
+  "warn-shade-1": "#E6D600",
+  "warn-shade-2": "#CCBF09",
+  "success": "#0BF80B",
+  "success-tint-1": "#87FE74",
+  "success-tint-2": "#D2FFC7",
+  "success-tint-3": "#EDFFE9",
+  "success-shade-1": "#00D000",
+  "success-shade-2": "#009700",
+);
+
+@include colors-variation($colors);

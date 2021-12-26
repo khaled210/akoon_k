@@ -1,0 +1,34 @@
+.sb-moon-theme {
+  // share button wrapper
+  .sb-wrapper {
+    // You can get default button color using the CSS variable
+    background-color: $color-primary;
+
+    // Content wrapper
+    .sb-content {
+      // Icon wrapper
+      .sb-icon {
+        background-color: $color-primary;
+      }
+
+      // Text wrapper
+      .sb-text {
+        color: $color-primary;
+      }
+    }
+
+    // For conditional styles
+    // E.g. Apply when icon, text are shown
+    &.sb-show-icon.sb-show-text {
+      color: $color-primary;
+      // Icon wrapper
+      .sb-icon {
+        color: $color-primary;
+      }
+
+      // Text wrapper
+      .sb-text {
+      }
+    }
+  }
+}

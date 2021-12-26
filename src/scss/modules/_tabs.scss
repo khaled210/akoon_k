@@ -1,0 +1,166 @@
+.bahr-tabs .mat-tab-group {
+  .mat-tab-nav-bar,
+  .mat-tab-header {
+    border-bottom: unset;
+  }
+  .mat-tab-labels {
+    border-left: 1px solid #acb1c01a;
+    padding: var(--space-l);
+    .mat-tab-label[aria-selected="true"] {
+      background-color: var(--color-light-gold);
+      color: var(--color-light-100);
+      .label-icon {
+        stroke: var(--color-neutral-0);
+      }
+    }
+  }
+  .mat-tab-label:nth-child(1) {
+    border-radius: 0 var(--border-radius-sharp) 0 0;
+  }
+  .mat-tab-label:nth-child(2) {
+    border-radius: var(--border-radius-sharp) 0 0 0;
+  }
+  .mat-tab-label {
+    padding: var(--space-base) var(--space-l);
+    opacity: 1;
+    background-color: var(--color-light-grey);
+    margin-left: var(--space-xs);
+    .descr {
+      font-size: var(--font-body);
+      font-weight: var(--font-regular);
+      margin-bottom: var(--space-none);
+    }
+  }
+
+  .mat-tab-body-wrapper {
+    padding: var(--space-l);
+    font-size: var(--font-body);
+    line-height: 1.8;
+    .mat-tab-body-content {
+      overflow: hidden;
+    }
+  }
+  .mat-ink-bar {
+    display: none;
+  }
+  .mat-tab-label {
+    font-size: var(--font-body);
+    .label-icon {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-primary-light);
+      margin-left: var(--space-base-xs);
+    }
+  }
+}
+// .results-box--title {
+//   font-size: var(--font-size-h6);
+//   font-weight: var(--font-bold);
+//   margin-bottom: var(--space-s);
+// }
+// .results-box__header {
+//   margin-bottom: var(--space-l);
+//   .descr {
+//     font-size: var(--font-body);
+//     font-weight: var(--font-regular);
+//   }
+// }
+// .results-box__body {
+//   .info {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     margin: var(--space-l) var(--space-none);
+//   }
+//   .info__box {
+//     margin-left: var(--space-l);
+//     a {
+//       display: flex;
+//       align-items: center;
+//       color: var(--color-black);
+//     }
+//     .circle-image {
+//       width: 4.125rem;
+//       height: 4.125rem;
+//       border-radius: var(--border-radius-circle);
+//       margin-left: var(--space-s);
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         border-radius: var(--border-radius-circle);
+//       }
+//     }
+//     .detials {
+//       display: flex;
+//       flex-direction: column;
+//       .detials--name {
+//         font-size: var(--font-small-body);
+//         font-weight: var(--font-semi-bold);
+//         margin-bottom: var(--space-s);
+//       }
+//       .detials--number {
+//         font-size: var(--font-small-body);
+//         font-weight: var(--font-regular);
+//       }
+//     }
+//   }
+//   .info__box:last-child {
+//     margin-left: var(--space-none);
+//   }
+//   .see-more {
+//     width: 100%;
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: flex-end;
+//     margin: var(--space-base) var(--space-none);
+//     a {
+//       padding: var(--space-base) var(--space-xl);
+//       color: var(--color-black);
+//       font-size: var(--font-small-body);
+//       font-weight: var(--font-bold);
+//       display: flex;
+//       align-items: center;
+//       position: relative;
+//       border: 1px solid #acb1c0;
+//       border-radius: var(--border-radius-rounded);
+//       .icon {
+//         stroke: var(--color-black);
+//         position: absolute;
+//         top: 0;
+//         bottom: 0;
+//         left: 3%;
+//         margin: auto;
+//       }
+//     }
+//   }
+// }
+
+.tabs-bar-flex {
+  display: flex;
+  justify-content: center;
+}
+.tabs-bar {
+  --tab-button-height: 30px;
+  --tab-button-width: 95px;
+  padding: 0.3rem;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  border-radius: var(--border-radius-soft);
+  background-color: var(--color-grey-9);
+}
+.tabs-bar__item {
+  flex: 1;
+}
+.tabs-bar__button.mat-button {
+  height: var(--tab-button-height);
+  min-width: var(--tab-button-width);
+  line-height: var(--tab-button-height);
+  width: 100%;
+  color: var(--color-grey-8);
+}
+.tabs-bar__button--active.mat-button {
+  background-color: var(--color--white);
+  color: var(--color-primary);
+}

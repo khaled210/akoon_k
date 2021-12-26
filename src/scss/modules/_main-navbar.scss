@@ -1,0 +1,169 @@
+.main-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: white;
+  box-shadow: $panel-shadow;
+}
+
+.main-navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // margin: 0 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 64px;
+}
+
+.main-navbar__nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  @include transition();
+  ul {
+    margin: 0;
+    @include breakpoint(isCommon) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &--mobile {
+    @include breakpoint(isCommon) {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.87);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &--open {
+    @include breakpoint(isCommon) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.main-navbar__icon-close {
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.main-navbar__logo {
+  height: 100%;
+  width: auto;
+}
+
+.main-navbar__link {
+  color: rgba($color-white, 0.8);
+  margin-right: 8px;
+  margin-left: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  position: relative;
+  &:after{
+    content: "";
+    height: 3px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+  }
+  @include breakpoint(isCommon) {
+    margin-bottom: 10px;
+  }
+  @include breakpoint(large) {
+    color: rgba($color-black, 1);
+    font-size: rem(16);
+  }
+  @include transition();
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
+  &--active{
+    color: $color-primary;
+    &:after{
+      background-color: $color-primary;
+    }
+  }
+}
+
+.main-navbar__icon-menu {
+  position: relative;
+  height: 17px;
+  width: 22px;
+  cursor: pointer;
+  &:hover {
+    .line {
+      width: 100%;
+    }
+  }
+  &--close {
+    z-index: 1001;
+    position: fixed !important;
+    left: 15px !important;
+    .line {
+      background-color: $color-white;
+    }
+    .line:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+      width: 100%;
+    }
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+    .line:nth-child(3) {
+      bottom: 40%;
+      transform: rotate(-45deg);
+      width: 100%;
+    }
+  }
+  @include breakpoint(large) {
+    display: none;
+  }
+}
+
+.line {
+  position: absolute;
+  z-index: 44;
+  left: 0;
+  height: 2px;
+  background-color: $color-secondary;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
+.line:nth-child(1) {
+  top: 0;
+  width: 50%;
+}
+
+.line:nth-child(2) {
+  top: 49%;
+  width: 100%;
+}
+
+.line:nth-child(3) {
+  bottom: 0;
+  width: 75%;
+}

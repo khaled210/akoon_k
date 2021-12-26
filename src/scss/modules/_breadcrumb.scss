@@ -1,0 +1,22 @@
+.breadcrumb{
+    ul{
+        display: flex;
+        align-items: center;
+    }
+    li{
+        > a, 
+        > span{
+            text-decoration: none;
+        }
+        > span{
+            font-size: .8em;
+            margin-inline-start: 1em;
+        }
+        + li{
+            &:before{
+                content: "|";
+                color: #ababab;
+            }
+        }
+    }
+}

@@ -4,9 +4,6 @@
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>notes</mat-icon>
       </button>
-      <!-- <span class="mx-3">
-          <img src="assets/icons/logo.png" alt="icon">
-      </span>
       <span class="spacer"></span>
       <button mat-button [matMenuTriggerFor]="userMenu">
         <mat-icon class="mr-1">account_circle</mat-icon>
@@ -14,8 +11,8 @@
       </button>
       <mat-menu #userMenu="matMenu" xPosition="before">
           <button mat-menu-item>Profile</button>
-          <button mat-menu-item (click)="logOut()">Logout</button>
-        </mat-menu> -->
+          <button mat-menu-item routerLink="/">Logout</button>
+        </mat-menu>
   </mat-toolbar>
   <!-- =============== -->
   <mat-drawer-container autosize>
