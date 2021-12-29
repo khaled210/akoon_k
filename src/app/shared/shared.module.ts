@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
+import { GetDataService } from '../services/get-data.service';
+
 
 
 
@@ -10,10 +12,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
   ],
   exports:[
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class SharedModule { }

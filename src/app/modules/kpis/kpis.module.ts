@@ -5,13 +5,15 @@ import { KpisRoutingModule } from './kpis-routing.module';
 import { KpisListComponent } from './kpis-list/kpis-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
+import { AddKpisComponent } from './add-kpis/add-kpis.component';
 
 
 
 
 @NgModule({
   declarations: [
-    KpisListComponent
+    KpisListComponent,
+    AddKpisComponent
   ],
   imports: [
     CommonModule,
