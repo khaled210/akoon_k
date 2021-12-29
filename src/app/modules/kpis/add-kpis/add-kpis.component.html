@@ -2,34 +2,38 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 text-center mb-5">
-        <h2 class="heading-section">sign Up</h2>
+        <h2 class="heading-section">add Artical</h2>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-4">
         <div class="login-wrap p-0">
-          <h3 class="mb-4 text-center">Have an account?</h3>
-
-          <form action="#" class="signin-form">
+          <form #Form="ngForm" class="signin-form">
             <div class="form-group">
               <input
                 type="text"
                 class="form-control"
-                placeholder="titleAr"
+                placeholder="CatName"
+                name="CatName"
+                #CatName="ngModel"
+                [(ngModel)]="data.CatName"
               />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <input
                 type="text"
                 class="form-control"
                 placeholder="descAr"
+                name="CreatedBy"
+                #CreatedBy="ngModel"
+                [(ngModel)]="data.CreatedBy"
               />
-            </div>
+            </div> -->
             <div class="form-group">
-              <button routerLink="/login"
+              <button (click)=" onSubmit()"
                 class="form-control btn btn-primary submit px-3"
               >
-                Sign Up
+                Add
               </button>
             </div>
           </form>

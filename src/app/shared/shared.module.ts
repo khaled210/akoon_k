@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { GetDataService } from '../services/get-data.service';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -13,9 +15,11 @@ import { GetDataService } from '../services/get-data.service';
     CommonModule,
     MaterialModule,
     RouterModule,
+    FormsModule
   ],
   exports:[
     MaterialModule,
+    FormsModule
   ]
 })
 export class SharedModule { }
