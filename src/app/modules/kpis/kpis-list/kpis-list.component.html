@@ -68,7 +68,7 @@
               edit
             </span>
           </button>
-          <button class="d-flex align-items-center" mat-menu-item>
+          <button (click)="deleteDialog(element.Id , element.CatName)" class="d-flex align-items-center" mat-menu-item>
             <span class="setting-text">delete</span>
             <span class="material-icons">
               delete

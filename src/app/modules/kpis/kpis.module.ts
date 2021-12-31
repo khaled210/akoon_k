@@ -6,6 +6,8 @@ import { KpisListComponent } from './kpis-list/kpis-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { AddKpisComponent } from './add-kpis/add-kpis.component';
+import { DeleteKpisComponent } from './delete-kpis/delete-kpis.component';
+
 
 
 
@@ -13,7 +15,8 @@ import { AddKpisComponent } from './add-kpis/add-kpis.component';
 @NgModule({
   declarations: [
     KpisListComponent,
-    AddKpisComponent
+    AddKpisComponent,
+    DeleteKpisComponent,
   ],
   imports: [
     CommonModule,

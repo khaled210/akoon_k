@@ -19,4 +19,8 @@ export class GetDataService {
   {
     return this._HttpClient.post('http://135.181.95.148:1000/api/Articles/Add',article);
   }
+
+  delArtical(id:any){
+    return this._HttpClient.delete(`http://135.181.95.148:1000//api/Articles/Delete/${id}/1`);
+  }
 }

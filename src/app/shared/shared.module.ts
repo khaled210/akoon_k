@@ -4,13 +4,16 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { GetDataService } from '../services/get-data.service';
 import { FormsModule } from '@angular/forms';
+import { SnackParComponent } from './components/snack-par/snack-par.component';
 
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SnackParComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
@@ -19,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports:[
     MaterialModule,
-    FormsModule
+    FormsModule,
+    SnackParComponent
   ]
 })
 export class SharedModule { }

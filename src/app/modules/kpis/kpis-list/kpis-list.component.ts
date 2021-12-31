@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ViewChild, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { AddKpisComponent } from '../add-kpis/add-kpis.component';
+import { DeleteKpisComponent } from '../delete-kpis/delete-kpis.component';
 
 export interface PeriodicElement {
   CatName: string;
@@ -38,6 +39,15 @@ export class KpisListComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddKpisComponent, {
       width: '50%',
+    });
+  }
+  deleteDialog(Id:number , CatName:string): void {
+    const dialogRef = this.dialog.open(DeleteKpisComponent, {
+      width: '250px',
+      data: {
+               id:Id ,
+              catName : CatName,
+            },
     });
   }
 

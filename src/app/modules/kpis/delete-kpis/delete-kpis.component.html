@@ -1,0 +1,8 @@
+<h1>{{done}}</h1>
+<h1></h1>
+
+<h2 mat-dialog-title>are you sure you want to delete this article {{data.catName}}</h2>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="sure()" [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+</div>
