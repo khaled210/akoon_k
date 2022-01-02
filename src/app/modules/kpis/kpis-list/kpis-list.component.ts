@@ -27,13 +27,23 @@ export class KpisListComponent implements OnInit {
 
   displayedColumns: string[] = ['CatName', 'Created', 'CreatedBy', 'Id','ImageURL','SouraId','Updated','UpdatedBy','setting'];
 
-  constructor(public data: GetDataService , public dialog: MatDialog) {
-    this.data.getAll().subscribe((res)=>{
-        this.dataSource = res.data
-    })
+  constructor(public _GetDataService: GetDataService , public dialog: MatDialog) {
+
+  }
+
+  getAllData(){
+    this._GetDataService.getAll().subscribe((res)=>{
+      this.dataSource = res.data
+  })
   }
 
   ngOnInit(): void {
+    this.getAllData();
+    this._GetDataService.refresh$.subscribe((res:Boolean)=>{
+      if(res){
+        this.getAllData()
+      }
+    })
   }
 
   openDialog(): void {

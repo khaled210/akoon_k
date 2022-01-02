@@ -14,9 +14,7 @@ export class DeleteKpisComponent implements OnInit {
   done: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,public dialogRef: MatDialogRef<DeleteKpisComponent> ,public _GetDataService:GetDataService) {}
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
@@ -25,7 +23,13 @@ export class DeleteKpisComponent implements OnInit {
     this._GetDataService.delArtical(this.data.id).subscribe((res:any)=>{
       console.log(res);
       this.done = res.message;
+      if(res.message == "تم الحذف بنجاح"){
+      }
     })
+  }
+
+
+  ngOnInit(): void {
   }
 
 }

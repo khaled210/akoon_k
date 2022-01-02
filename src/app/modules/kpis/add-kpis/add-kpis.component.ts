@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -29,15 +29,12 @@ export class AddKpisComponent implements OnInit {
         }
     ]
   };
-  constructor(public _GetDataService:GetDataService , private dialogRef: MatDialogRef<AddKpisComponent>) { }
-
-
+  constructor(public _GetDataService:GetDataService , @Inject(MAT_DIALOG_DATA) public dataAll: any, private dialogRef: MatDialogRef<AddKpisComponent>) { }
   onSubmit(){
     this._GetDataService.addArticle(this.data).subscribe((res)=>{
       console.log(res);
     })
     this.dialogRef.close();
-    console.log(this.data);
 
   }
 
