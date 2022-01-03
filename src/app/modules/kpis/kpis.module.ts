@@ -7,6 +7,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { AddKpisComponent } from './add-kpis/add-kpis.component';
 import { DeleteKpisComponent } from './delete-kpis/delete-kpis.component';
+import { EditKpisComponent } from './edit-kpis/edit-kpis.component';
+
 
 
 
@@ -17,6 +19,8 @@ import { DeleteKpisComponent } from './delete-kpis/delete-kpis.component';
     KpisListComponent,
     AddKpisComponent,
     DeleteKpisComponent,
+    EditKpisComponent,
+
   ],
   imports: [
     CommonModule,

@@ -13,17 +13,16 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="CatName"
                 name="CatName"
                 #CatName="ngModel"
-                [(ngModel)]="data.CatName"
+                [(ngModel)]="article.CatName"
               />
             </div>
             <div class="form-group">
-              <button (click)=" onSubmit()"
+              <button (click)="onSubmit()"
                 class="form-control btn btn-primary submit px-3"
               >
-                Add
+                Edit
               </button>
             </div>
           </form>

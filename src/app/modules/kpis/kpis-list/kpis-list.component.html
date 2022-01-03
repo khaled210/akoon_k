@@ -1,4 +1,4 @@
-<button mat-flat-button color="primary" class="pl-2" (click)="openDialog()">
+<button mat-flat-button color="primary" class="pl-2 mb-4" (click)="openDialog()">
   <mat-icon>add</mat-icon>
   <span>New Category</span>
 </button>
@@ -62,9 +62,9 @@
           {{element.setting }}
         </button>
         <mat-menu #menu="matMenu">
-          <button class="d-flex align-items-center" mat-menu-item>
+          <button (click)="editDialog(element)" class="d-flex align-items-center" mat-menu-item>
             <span class="setting-text">edit</span>
-            <span class="material-icons">
+            <span  class="material-icons">
               edit
             </span>
           </button>
@@ -81,4 +81,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
 

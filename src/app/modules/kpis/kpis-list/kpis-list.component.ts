@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { AddKpisComponent } from '../add-kpis/add-kpis.component';
 import { DeleteKpisComponent } from '../delete-kpis/delete-kpis.component';
+import { EditKpisComponent } from '../edit-kpis/edit-kpis.component';
 
 export interface PeriodicElement {
   CatName: string;
@@ -58,6 +59,12 @@ export class KpisListComponent implements OnInit {
                id:Id ,
               catName : CatName,
             },
+    });
+  }
+  editDialog(data:any): void {
+    const dialogRef = this.dialog.open(EditKpisComponent, {
+      width: '500px',
+      data
     });
   }
 
