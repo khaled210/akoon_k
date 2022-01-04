@@ -38,7 +38,7 @@ export class DeleteKpisComponent implements OnInit {
         this.done = res.message;
       }
       else{
-        this.done = "حث خطأ";
+        this.done = "حدث خطأ";
       }
       this.openSnackBar()
     })

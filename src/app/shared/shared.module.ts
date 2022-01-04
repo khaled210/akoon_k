@@ -12,7 +12,7 @@ import { SnackParComponent } from './components/snack-par/snack-par.component';
 
 @NgModule({
   declarations: [
-    SnackParComponent
+    SnackParComponent,
   ],
   imports: [
     CommonModule,

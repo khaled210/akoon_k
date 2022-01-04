@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, ViewChild, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ViewChild, OnInit, OnDestroy} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { AddKpisComponent } from '../add-kpis/add-kpis.component';
 import { DeleteKpisComponent } from '../delete-kpis/delete-kpis.component';
@@ -23,28 +24,23 @@ const ELEMENT_DATA: PeriodicElement[] = [];
   templateUrl: './kpis-list.component.html',
   styleUrls: ['./kpis-list.component.scss']
 })
-export class KpisListComponent implements OnInit {
+export class KpisListComponent implements OnInit, OnDestroy {
   dataSource = ELEMENT_DATA;
 
   displayedColumns: string[] = ['CatName', 'Created', 'CreatedBy', 'Id','ImageURL','SouraId','Updated','UpdatedBy','setting'];
+  subscriptions:Subscription[] = [];
 
   constructor(public _GetDataService: GetDataService , public dialog: MatDialog) {
 
   }
 
-  getAllData(){
-    this._GetDataService.getAll().subscribe((res)=>{
-      this.dataSource = res.data
-  })
-  }
+
 
   ngOnInit(): void {
-    this.getAllData();
-    this._GetDataService.refresh$.subscribe((res:Boolean)=>{
-      if(res){
-        this.getAllData()
-      }
-    })
+    this._GetDataService.getAll();
+   const dataSub = this._GetDataService.kpiList$.subscribe(res=>this.dataSource = res)
+   this.subscriptions.push(dataSub);
+
   }
 
   openDialog(): void {
@@ -67,5 +63,7 @@ export class KpisListComponent implements OnInit {
       data
     });
   }
-
+  ngOnDestroy(): void {
+      this.subscriptions.map(sub=>sub.unsubscribe())
+  }
 }
