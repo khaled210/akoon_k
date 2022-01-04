@@ -250,3 +250,14 @@ h3{
     height: 18px !important;
     width: 18px !important;
 }
+
+.spinner{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  /* height: 100%; */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+}
