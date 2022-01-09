@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { GetDataService } from '../services/get-data.service';
 import { FormsModule } from '@angular/forms';
 import { SnackParComponent } from './components/snack-par/snack-par.component';
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 
 
@@ -18,12 +19,14 @@ import { SnackParComponent } from './components/snack-par/snack-par.component';
     CommonModule,
     MaterialModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ValidateEqualModule
   ],
   exports:[
     MaterialModule,
     FormsModule,
-    SnackParComponent
+    SnackParComponent,
+    ValidateEqualModule
   ]
 })
 export class SharedModule { }

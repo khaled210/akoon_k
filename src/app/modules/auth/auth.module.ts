@@ -5,6 +5,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 
@@ -16,7 +18,8 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }
