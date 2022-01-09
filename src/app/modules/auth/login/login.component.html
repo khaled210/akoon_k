@@ -5,18 +5,11 @@
       <div class="col-md-6 col-lg-4">
         <div class="login-wrap p-0">
           <h2 class="heading-section text-center">Sign In</h2>
-          <!-- <h3 class="mb-4 text-center">Have an account?</h3>
-          <div class="form-group">
-            <button mat-flat-button color="primary"
-              class="form-control btn btn-secondry submit px-3">
-              Sign in
-            </button>
-          </div> -->
-          <form class="signUp-form">
+          <form #login="ngForm" class="signUp-form">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Email</mat-label>
               <input matInput required type="text" placeholder="Email" name="Email" #Email="ngModel"
-                [(ngModel)]="loginData.Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"/>
+                [(ngModel)]="loginData.username" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"/>
                 <mat-error
                 *ngIf="Email.invalid && (Email.dirty || Email.touched) && Email.errors"
               >
@@ -41,8 +34,8 @@
           </mat-form-field>
             <div class="form-group">
               <button mat-flat-button color="primary"
-                class="form-control btn btn-primary submit px-3" (click)="onSubmit()">
-                Sign Up
+                class="form-control btn btn-primary submit px-3" (click)="onSubmit(login)">
+                Sign In
               </button>
             </div>
           </form>

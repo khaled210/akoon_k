@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { SnackParComponent } from 'src/app/shared/components/snack-par/snack-par.component';
+
 
 
 export class info{
@@ -36,7 +38,8 @@ hide = true;
 confirmPassword:string="";
 isMatch:boolean =true;
   constructor(private Auth:AuthService,
-              private _snackBar: MatSnackBar,) { }
+              private _snackBar: MatSnackBar,
+              public _Router:Router) { }
 
   openSnackBar() {
     this._snackBar.openFromComponent(SnackParComponent, {
@@ -51,6 +54,7 @@ isMatch:boolean =true;
       console.log(res);
       if(res.StatusId == 200){
         this.message = "تمت الإضافة بنجاح"
+        this._Router.navigate(['/login']);
       }
       else{
         this.message = "يوجد خطأ ما"
