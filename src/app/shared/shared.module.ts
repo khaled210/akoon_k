@@ -6,6 +6,10 @@ import { GetDataService } from '../services/get-data.service';
 import { FormsModule } from '@angular/forms';
 import { SnackParComponent } from './components/snack-par/snack-par.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+
 
 
 
@@ -27,6 +31,13 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     FormsModule,
     SnackParComponent,
     ValidateEqualModule
+  ],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    }
   ]
 })
 export class SharedModule { }

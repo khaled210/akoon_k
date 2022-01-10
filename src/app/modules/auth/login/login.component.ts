@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, Routes } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -19,25 +20,32 @@ export class LoginComponent implements OnInit {
 
   loginData :loginForm = new loginForm()
   hide = true;
+  error ="";
 
-  constructor(public _AuthService:AuthService) { }
+  constructor(public auth:AuthService , private _Router:Router) { }
+
+  // profileData(){
+  //   this.auth.getProfileData().subscribe((res)=>{
+  //     console.log(res);
+  //   })
+  // }
 
   onSubmit(login:NgForm){
-
-    if(login.invalid) return;
-    this._AuthService.login(this.loginData);
-
-    // this.Auth.register(this.infoData).subscribe((res:any)=>{
-    //   console.log(res);
-    //   if(res.StatusId == 200){
-    //     this.message = "تمت الإضافة بنجاح"
-    //   }
-    //   else{
-    //     this.message = "يوجد خطأ ما"
-    //   }
-    //   this.openSnackBar()
-    // })
+    if(login.valid)
+    this.auth.login(this.loginData).subscribe((res:any)=>{
+      console.log("sjvbdkvhbdkvb", res);
+      if(res.role == "Students"){
+        localStorage.setItem('userToken',res.access_token);
+        // this.profileData()
+        this._Router.navigate(['/admin/kpis'])
+      }
+    },
+    (error)=>{
+     this.error = error.error.error_description
+    })
   }
+
+
 
   ngOnInit(): void {
   }
