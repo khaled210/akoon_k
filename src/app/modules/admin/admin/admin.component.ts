@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  userName:string =""
 
-  constructor() { }
-
+  constructor(public auth:AuthService) { }
+  profileData(){
+    this.auth.getProfileData().subscribe((res:any)=>{
+      this.userName =res.data.FullName
+    })
+  }
 
   sideLinksObject = [
     {
@@ -34,6 +40,7 @@ export class AdminComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.profileData()
   }
 
 }

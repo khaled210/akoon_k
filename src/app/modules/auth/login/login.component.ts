@@ -25,15 +25,14 @@ export class LoginComponent implements OnInit {
   constructor(public auth:AuthService , private _Router:Router) { }
 
   // profileData(){
-  //   this.auth.getProfileData().subscribe((res)=>{
-  //     console.log(res);
+  //   this.auth.getProfileData().subscribe((res:any)=>{
+  //     console.log(res.data.FullName);
   //   })
   // }
 
   onSubmit(login:NgForm){
     if(login.valid)
     this.auth.login(this.loginData).subscribe((res:any)=>{
-      console.log("sjvbdkvhbdkvb", res);
       if(res.role == "Students"){
         localStorage.setItem('userToken',res.access_token);
         // this.profileData()
